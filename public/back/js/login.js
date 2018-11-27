@@ -22,6 +22,9 @@ $(function () {
             max: 6,
             message: '用户名长度必须在2到6之间'
           },
+          callback:{
+            message:'用户名错误'
+          }
         }
       },
       //验证密码
@@ -36,6 +39,9 @@ $(function () {
             min: 2,
             max: 12,
             message: '密码的长度必须是2到12位'
+          },
+          callback:{
+            message:'密码错误'
           }
         }
 
@@ -61,12 +67,16 @@ $(function () {
       success:function(info){
         console.log(info);
         if(info.error == 1000){
-          alert('用户名不存在');
+          // alert('用户名不存在');
+          $('#form').data('bootstrapValidator').updateStatus('username','INVALID','callback');
+          
           return
         }
         if(info.error == 1001){
-          alert('密码错误');
-          return
+          // alert('密码错误');
+          //NOT_VALIDATED(未校验), VALIDATING(校验中), INVALID(校验失败) or VALID(校验成功)
+          $('#form').data('bootstrapValidator').updateStatus('password','INVALID','callback');
+          return;
         }
         if(info.success){
           location.href = 'index.html';
