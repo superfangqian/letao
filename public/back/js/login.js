@@ -77,7 +77,10 @@ $(function () {
     /*
   * 3. 重置功能, 本身重置按钮, 就可以重置内容, 需要额外的重置状态
   * */
-// $('type=["reset"]').click(function(){
-//   $('#form').data('bootstrapValidator').resetForm();
-// })
+$('[type="reset"]').click(function(){
+  //resetForm(true)重置内容和状态
+  //resetForm()只重置状态
+  $('#form').data('bootstrapValidator').resetForm();
+})
+
 })
