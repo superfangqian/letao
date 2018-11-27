@@ -61,10 +61,12 @@ $(function () {
       success:function(info){
         console.log(info);
         if(info.error == 1000){
-          alert('用户名不存在')
+          alert('用户名不存在');
+          return
         }
         if(info.error == 1001){
-          alert('密码错误')
+          alert('密码错误');
+          return
         }
         if(info.success){
           location.href = 'index.html';
