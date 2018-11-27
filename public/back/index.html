@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
   <link rel="stylesheet" href="lib/nprogress/nprogress.css">
   <link rel="stylesheet" href="css/common.css">
 </head>
+
 <body>
   <!-- 侧边栏 -->
   <div class="lt_aside">
@@ -23,13 +25,13 @@
     <div class="list">
       <ul>
         <li>
-          <a href="user.html" class="active">
+          <a href="user.html">
             <i class="glyphicon glyphicon-user"></i>
             <span>用户管理</span>
           </a>
         </li>
         <li>
-          <a href="category.html">
+          <a href="javescript:;" class="category">
             <i class="glyphicon glyphicon-list"></i>
             <span>分类管理</span>
           </a>
@@ -52,23 +54,43 @@
   <div class="lt_main">
     <!-- 头部 -->
     <div class="lt_toolbar">
-      <a href="#" class="icon_left pull-left"><i class="glyphicon glyphicon-align-justify"></i></a>
-      <a href="#" class="icon_right pull-right"><i class="glyphicon glyphicon-log-out"></i></a>
+      <a href="#" class="icon_left pull-left">
+        <i class="glyphicon glyphicon-align-justify"></i>
+      </a>
+      <a href="#" class="icon_right pull-right">
+        <i class="glyphicon glyphicon-log-out"></i>
+      </a>
     </div>
     <!-- 内容 -->
     <div class="container-fluid">
-        <ol class="breadcrumb mt_20">
-            <li><a href="#">管理系统</a></li>
-            <li class="active">首页</li>
-          </ol>
+      <ol class="breadcrumb mt_20">
+        <li>
+          <a href="#">管理系统</a>
+        </li>
+        <li class="active">首页</li>
+      </ol>
     </div>
   </div>
-  
+  <!-- 作图 -->
+
+
+  <!-- 退出模态框 -->
+  <div class="modal fade" tabindex="-1" id="logoutModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        ...
+      </div>
+    </div>
+  </div>
+
 
   <script src="lib/jquery/jquery.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
   <script src="lib/nprogress/nprogress.js"></script>
   <script src="js/common.js"></script>
+  <script src="js/isLogin.js"></script>
+  <script src="js/login.js"></script>
 </body>
+
 </html>

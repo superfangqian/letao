@@ -54,6 +54,7 @@ $(function() {
     $('.lt_aside').toggleClass("hidemenu");
     $('.lt_main').toggleClass("hidemenu");
     $('.lt_topbar').toggleClass("hidemenu");
+    
   })
 
 
