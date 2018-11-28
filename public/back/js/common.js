@@ -26,6 +26,7 @@ $(function(){
 
 
   //退出功能
+  //点击退出按钮，弹出模态框
   $('.icon_right').click(function(){
     $('#outModal').modal('show');
   })
@@ -36,6 +37,7 @@ $(function(){
       type:'get',
       dataType:'json',
       success:function(info){
+        //成功的时候跳转
         console.log(info);
         location.href = 'login.html';  
       }

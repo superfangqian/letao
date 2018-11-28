@@ -97,7 +97,6 @@ i{
   padding-left: 60px;
 }
 .lt_main{
-  background-color: pink;
   height: 1000px;
   padding-left: 180px;
   padding-top: 50px;
@@ -130,3 +129,10 @@ i{
   color: #fff;
   font-size: 20px;
 }
+.echarts_left,
+.echarts_right {
+  width: 48%;
+  height: 400px;
+  background-color: indianred;
+}
+
