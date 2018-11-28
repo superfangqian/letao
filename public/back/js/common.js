@@ -14,7 +14,7 @@ $(document).ajaxStart(function () {
 //点击分类管理，下拉菜单展开
 $(function(){
   $('.category').click(function(){
-    $(this).next().slideToggle();
+    $(this).next().stop().slideToggle();
   })
 
   $('.icon_left').click(function(){
@@ -27,6 +27,18 @@ $(function(){
 
   //退出功能
   $('.icon_right').click(function(){
-    
+    $('#outModal').modal('show');
+  })
+
+  $('#outBtn').click(function(){
+    $.ajax({
+      url:'/employee/employeeLogout',
+      type:'get',
+      dataType:'json',
+      success:function(info){
+        console.log(info);
+        location.href = 'login.html';  
+      }
+    })
   })
 })
