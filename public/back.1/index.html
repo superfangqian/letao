@@ -54,18 +54,22 @@
 
 
     <!-- 路径导航 -->
-    <ol class="breadcrumb mt_20">
-        <li><a href="index.html">管理系统</a></li>
-        <li class="active">首页</li>
-    </ol>
-
-    <!-- 作图的两个框 -->
-    <div class="lt_content">
-        <div class="echarts_left pull-left"></div>
-        <div class="echarts_right pull-right"></div>
+    <div class="container-fluid">
+        <ol class="breadcrumb mt_20">
+            <li><a href="index.html">管理系统</a></li>
+            <li class="active">首页</li>
+        </ol>
+    
+        <!-- 作图的两个框 -->
+        <div class="lt_content">
+            <div class="echarts_left pull-left"></div>
+            <div class="echarts_right pull-right"></div>
+        </div>
+      </div>
     </div>
-  </div>
+  
 
+    
   <!-- 模态框 -->
   <!-- 外层 -->
   <div class="modal fade" tabindex="-1" id="logoutModel">
@@ -92,9 +96,11 @@
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
   <script src="lib/nprogress/nprogress.js"></script>
+  <script src="lib/echarts/echarts.min.js"></script>
   <script src="js/common.js"></script>
   <script src="js/isLogin.js"></script>
   <script src="js/login.js"></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>

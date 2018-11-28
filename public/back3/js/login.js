@@ -23,6 +23,9 @@ $(function () {
             max: 6,
             message: '用户名长度必须在2到6之间'
           },
+          callback:{
+            message:'用户名错误'
+          }
         }
       },
       password: {
@@ -37,6 +40,9 @@ $(function () {
             max: 12,
             message: '用户名长度必须在6到12之间'
           },
+          callback:{
+            message:'密码错误'
+          }
         }
       }
     }
@@ -54,32 +60,38 @@ $(function () {
     e.preventDefault();
     //使用ajax提交逻辑
     $.ajax({
-      type:'post',
-      url:'/employee/employeeLogin',
-      dataType:'json',
-      data:$('#form').serialize(),
-      success:function(info){
+      type: 'post',
+      url: '/employee/employeeLogin',
+      dataType: 'json',
+      data: $('#form').serialize(),
+      success: function (info) {
         console.log(info);
-        if(info.error == 1000){
-          alert('用户名错误')
-          return
+        if (info.error == 1000) {
+          // alert('用户名错误')
+          // - NOT_VALIDATED：未校验的
+          // - VALIDATING：校验中的
+          // - INVALID ：校验失败的
+          // - VALID：校验成功的。
+          $('#form').data('bootstrapValidator').updateStatus('username', 'INVALID','callback');
+          return;
         }
-        if(info.error == 1001){
-          alert('密码错误')
-          return
+        if (info.error == 1001) {
+          // alert('密码错误')
+          $('#form').data('bootstrapValidator').updateStatus('password','INVALID','callback');
+          return;
         }
-        if(info.success){
+        if (info.success) {
           location.href = 'index.html'
         }
-        
+
       }
     })
-});
+  });
 
 
 
-//重置
-$('[type = "reset"]').click(function(){
-  $('#form').data('bootstrapValidator').resetForm();
-})
+  //重置
+  $('[type = "reset"]').click(function () {
+    $('#form').data('bootstrapValidator').resetForm();
+  })
 })

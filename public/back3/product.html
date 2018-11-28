@@ -13,13 +13,13 @@
 </head>
 
 <body>
-  <!-- 乐淘侧边栏 -->
+  <!-- 侧边栏 -->
   <div class="lt_aside">
     <div class="brank">
-      <a href="#">黑马31期</a>
+      <a href="#">前端31期</a>
     </div>
     <div class="user">
-      <img src="./images/02.jpg" alt="">
+      <img src="images/02.jpg" alt="">
       <p>超级管理员</p>
     </div>
     <div class="nav">
@@ -31,68 +31,82 @@
           </a>
         </li>
         <li>
-          <a href="javascript:;" class="category"><i class="glyphicon glyphicon-list"></i><span>分类管理</span></a>
+          <a href="javascript:;" class="category">
+            <i class="glyphicon glyphicon-list"></i>
+            <span>分类管理</span>
+          </a>
           <!-- 用于切换展示的二级列表 -->
           <div class="child">
             <a href="first.html">一级分类</a>
             <a href="second.html">二级分类</a>
           </div>
         </li>
-        <li><a href="product.html" class="active"><i class="glyphicon glyphicon-tags"></i><span>商品管理</span></a></li>
+        <li>
+          <a href="product.html" class="active">
+            <i class="glyphicon glyphicon-tags"></i>
+            <span>商品管理</span>
+          </a>
+        </li>
       </ul>
     </div>
 
   </div>
-
-  <!-- 主页面 -->
+  <!-- 主要内容 -->
   <div class="lt_main">
-    <!-- 顶部 -->
     <div class="lt_toolbar">
-      <a href="#" class="icon-left pull-left"><i class="glyphicon glyphicon-align-justify"></i></a>
-      <a href="#" class="icon-right pull-right"><i class="glyphicon glyphicon-log-out"></i></a>
+      <a href="#" class="icon_left pull-left">
+        <i class="glyphicon glyphicon-align-justify"></i>
+      </a>
+      <a href="#" class="icon_right pull-right">
+        <i class="glyphicon glyphicon-log-out"></i>
+      </a>
+    </div>
+
+    <div class="container-fluid">
+      <!-- 路径导航 -->
+      <ol class="breadcrumb mt_20">
+        <li>
+          <a href="#">管理系统</a>
+        </li>
+        <li class="active">首页</li>
+      </ol>
+
     </div>
 
 
-    <!-- 路径导航 -->
-    <div class="container-fluid">
-        <ol class="breadcrumb mt_20">
-          <li>
-            <a href="index.html">管理系统</a>
-          </li>
-          <li class="active">首页</li>
-        </ol>
-      </div>
-  </div>
 
-  <!-- 模态框 -->
-  <!-- 外层 -->
-  <div class="modal fade" tabindex="-1" id="logoutModel">
     <!-- 模态框 -->
+    <div class="modal fade" tabindex="-1" id="logouModal">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             <h4 class="modal-title">温馨提示</h4>
           </div>
           <div class="modal-body">
-              <p class="red"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
+            <p class="red"><i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-            <button type="button" class="btn btn-primary" id="logoutBtn">退出</button>
+            <button type="button" class="btn btn-primary" id="logoutBtn">退出 </button>
           </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+  </div>
 
-
-  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="lib/bootstrap-validator/js/bootstrapValidator.js"></script>
   <script src="lib/nprogress/nprogress.js"></script>
   <script src="js/common.js"></script>
   <script src="js/isLogin.js"></script>
-  <script src="js/login.js"></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>
