@@ -20,6 +20,9 @@ $(function () {
             min: 2,
             max: 6,
             message: '用户名长度必须是2到6位'
+          },
+          callback:{
+            message:'用户名不存在'
           }
         }
       },
@@ -27,13 +30,16 @@ $(function () {
         validators: {
           //不能为空
           notEmpty: {
-            message: '用户名不能为空'
+            message: '密码不能为空'
           },
           //长度校验
           stringLength: {
             min: 6,
             max: 12,
-            message: '用户名长度必须是6到12位'
+            message: '密码长度必须是6到12位'
+          },
+          callback:{
+            message:'密码错误'
           }
         }
       }
@@ -59,11 +65,19 @@ $(function () {
       success: function (info) {
         console.log(info);
         if (info.error == 1000) {
-          alert('用户名不存在');
+          // alert('用户名不存在');
+          $('#form').data("bootstrapValidator").updateStatus( "username", "INVALID", 'callback');
           return;
         }
         if (info.error == 1001) {
-          alert('密码错误');
+          // alert('密码错误');
+          // 更新当前input的校验状态, 更新成失败
+          // updateStatus
+          // 参数1: filed  字段名称
+          // 参数2: status 状态
+          //        NOT_VALIDATED(未校验), VALIDATING(校验中), INVALID(校验失败) or VALID(校验成功)
+          // 参数3: validator 配置校验规则, 用来配置输出的提示信息
+          $('#form').data('bootstrapValidator').updateStatus('password','INVALID','callback');
           return;
         }
         if (info.success) {

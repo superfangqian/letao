@@ -1,12 +1,129 @@
 .bg_color{
   background-color: #222D32;
 }
+a:hover,
+a:visited,
+a:active,
+a:link{
+  text-decoration: none;
+}
+ol,
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 .mt_150{
   margin-top: 150px;
+}
+.mt_20{
+  margin-top: 20px;
 }
 .panel-title{
   height: 40px;
   line-height: 40px;
   text-align: center;
   font-size: 20px;
+}
+/* 模态框中文字提示 */
+.red{
+  color: #A94442;
+}
+.lt_aside{
+  width: 180px;
+  height: 100%;
+  background-color: #222D32;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  transition: 1s;
+}
+.lt_aside.hidemenu{
+  left: -180px;
+}
+.lt_aside .brank{
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  background-color: #367FA9;
+  font-size: 25px;
+  text-align: center;
+}
+.lt_aside .brank a{
+  color: #fff;
+}
+.lt_aside .user{
+  margin-top: 30px;
+}
+.lt_aside .user img{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+.lt_aside .user p{
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+.nav{
+  margin-top: 30px;
+}
+.nav ul li a{
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  display: block;
+  border-left: 3px solid transparent;
+  padding-left: 40px;
+}
+.nav ul li a i{
+  margin-right: 5px;
+}
+.nav ul li a.active{
+  border-left: 3px solid #006699;
+  background-color: #1D1F21;
+}
+.nav ul li .child{
+  display: none;
+}
+.nav ul li .child a{
+  padding-left: 60px;
+}
+.lt_main{
+  width: 100%;
+  height: 1000px;
+  background-color: pink;
+  padding-left: 180px;
+  padding-top: 50px;
+}
+.lt_main.hideMenu{
+  padding-left: 0;
+}
+.lt_main .lt_toolbar{
+  height: 50px;
+  width: 100%;
+  background-color: #3C8DBC;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  padding-left: 180px;
+  transition: 1s;
+}
+.lt_toolbar.hideMenu{
+  padding-left: 0;
+}
+.lt_main .lt_toolbar .icon-left,
+.lt_main .lt_toolbar .icon-right{
+  font-size: 20px;
+  height: 50px;
+  line-height: 50px;
+  width: 50px;
+  text-align: center;
+  color: #fff;
 }
