@@ -34,7 +34,7 @@ $( document ).ajaxStop(function() {
   setTimeout(function() {
     // 关闭进度条
     NProgress.done();
-  },500)
+  }, 500)
 });
 
 
@@ -54,7 +54,6 @@ $(function() {
     $('.lt_aside').toggleClass("hidemenu");
     $('.lt_main').toggleClass("hidemenu");
     $('.lt_topbar').toggleClass("hidemenu");
-    
   })
 
 
