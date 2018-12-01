@@ -79,11 +79,11 @@ $(function(){
     $.ajax({
       type: "post",
       url: "/user/updateUser",
-      dataType: "json",
       data: {
         id: currentId,
         isDelete: isDelete
       },
+      dataType: "json",
       success: function( info ) {
         console.log( info );
         if ( info.success ) {

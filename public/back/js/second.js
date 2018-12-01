@@ -44,6 +44,8 @@ $(function () {
   $('#addBtn').click(function () {
     $('#secondModal').modal('show');
 
+
+    //发送ajax的请求，获取一级分类
     $.ajax({
       url: '/category/queryTopCategoryPaging',
       type: 'get',
@@ -79,6 +81,8 @@ $(function () {
 
   })
 
+
+  //5.配置文件上传插件，让插件发送异步文件上传请求
   $("#fileupload").fileupload({
     dataType: "json",
     //e：事件对象
@@ -103,6 +107,7 @@ $(function () {
     }
   });
 
+  //6.表单校验功能
   $('#form').bootstrapValidator({
     excluded: [],
     // 配置校验图标
@@ -135,6 +140,35 @@ $(function () {
         }
       },
     }
+  });
+
+  //7.注册表单校验成功事件，阻止默认的表单提交，通过Ajax提交
+  $('#form').on('success.form.bv',function(e){
+    e.preventDefault();
+
+    $.ajax({
+      type:'post',
+      url:'/category/addSecondCategory',
+      data:$('#form').serialize(),
+      dataType:'json',
+      success:function(info){
+        console.log(info);
+        if(info.success){
+          $('#secondModal').modal('hide');
+          currentPage = 1;
+          render();
+
+          //添加完成后，重置表单
+          $('#form').data('bootstrapValidator').resetForm(true);
+
+
+          //下拉菜单和图片不在表单元素，需要手动重置
+          $('#dropdownText').text('请选择一级分类')
+          $('#imgBox img').attr('src','./images/none.png')
+        }
+        
+      }
+    })
   })
 
 
