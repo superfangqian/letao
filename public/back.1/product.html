@@ -127,7 +127,6 @@
     </div>
     <!-- /.modal-dialog -->
   </div>
-  <!-- /.modal -->
 
   <!-- 添加分类模态框 -->
   <div class="modal fade" id="productModal" tabindex="-1">
@@ -162,10 +161,10 @@
 
             </div>
             <div class="form-group">
-                <textarea name="proDesc" class="form-control" cols="30" rows="4" placeholder="请输入商品描述" name="proDesc" ></textarea>
+              <textarea name="proDesc" class="form-control" cols="30" rows="4" placeholder="请输入商品描述" name="proDesc"></textarea>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control"  name="num" placeholder="请输入商品库存">
+              <input type="text" class="form-control" name="num" placeholder="请输入商品库存">
             </div>
             <div class="form-group">
               <input type="text" class="form-control" name="size" placeholder="请输入商品尺码">
@@ -178,9 +177,11 @@
             </div>
             <div class="form-group">
               <label class="btn btn-default" for="fileupload">上传图片</label>
-              <input id="fileupload" type="file" name="pic1" data-url="/category/addSecondCategoryPic" style="display: none">
+              <input id="fileupload" type="file" name="pic1" data-url="/product/addProductPic" style="display: none" multiple>
             </div>
             <div class="form-group" id="imgBox">
+              <!--<img src="./images/none.png" style="width: 100px;">-->
+
               <!-- 添加一个隐藏域, 专门用于提交图片地址 -->
               <input type="hidden" name="picStatus">
             </div>
@@ -194,7 +195,7 @@
     </div>
   </div>
 
-
+  <!-- 渲染页面 -->
   <script type="text/html" id="product">
     {{each rows v i}}
     <tr>  			
@@ -213,6 +214,14 @@
       </td>
     </tr>
     {{/each}}
+  </script>
+  <!-- 渲染请选择二级分类 -->
+  <script type="text/html" id="dropdown">
+    {{each rows v i}}
+    <li>
+      <a href="#" data-id="{{v.id}}">{{v.brandName}}</a>
+    </li>
+    {{/each}} 
   </script>
 
 
